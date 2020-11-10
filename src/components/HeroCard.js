@@ -1,14 +1,15 @@
 import React, { useCallback } from "react";
 import "./styles.css";
 
-import bgBtn from "./bg-btn.png";
-
 export default ({ allHeroes }) => {
   const [gridHeroes, setGridHeroes] = React.useState([]);
   const [randomHero, setRandomHero] = React.useState([]);
   const [myHero, setMyHero] = React.useState("");
   const [loaded, setLoaded] = React.useState(true);
   const [url] = React.useState("https://steamcdn-a.akamaihd.net");
+  const [bgBtn] = React.useState(
+    "https://uploads.codesandbox.io/uploads/user/ae5fd45a-0dd7-412f-8b21-cf9bc0bf6af9/H6CZ-bg-btn.png"
+  );
 
   const filterHeroes = useCallback((arr) => {
     let count = 25;
