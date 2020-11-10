@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+button {
+  font-family: "Poppins", sans-serif;
+}
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+
+  background: linear-gradient(rgba(116, 185, 255, 0.8), rgba(214, 48, 49, 0.5)),
+    url(https://i.pinimg.com/originals/7a/05/19/7a0519848fac0a30aca7e76d5ecd3578.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  /* background-image: repeating-linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.03) 0px,
+      rgba(0, 0, 0, 0.03) 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(45deg, rgb(18, 105, 233), rgb(166, 255, 155)); */
+}
