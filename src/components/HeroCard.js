@@ -82,12 +82,7 @@ export default ({ allHeroes }) => {
       <div
         style={{
           width: "100%",
-          height: "3rem",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          margin: "0 auto",
-          // padding: "0 4.6rem",
+          height: "2.8rem",
           background: "whitesmoke"
         }}
       >
@@ -98,12 +93,9 @@ export default ({ allHeroes }) => {
             width: "100%",
             height: "100%",
             border: "0",
-            boxShadow:
-              myHero.id === randomHero.id && "2px 2px 3px rgba(0, 0, 0, .15)",
-
             background:
               myHero.id && myHero.id === randomHero.id
-                ? "linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%)"
+                ? "linear-gradient(to right, #43e97b 0%, #38f9d7 100%)"
                 : // : myHero.name && myHero.name !== randomHero.name
                   // ? "tomato"
                   "rgba(0,0,0, .1)",
@@ -119,7 +111,7 @@ export default ({ allHeroes }) => {
         >
           <span
             style={{
-              fontSize: "1.5rem",
+              fontSize: "1.4rem",
               fontWeight: "700"
             }}
           >
@@ -145,9 +137,8 @@ export default ({ allHeroes }) => {
                 style={{
                   width: "32px",
                   height: "32px",
-                  borderRadius: !hero.visible && "50%",
                   overflow: "hidden",
-                  transition: "all .3s"
+                  transition: "0.3s"
                 }}
               />
             </>
@@ -156,7 +147,6 @@ export default ({ allHeroes }) => {
           return (
             <button
               key={hero.id}
-              // value={hero.id}
               onClick={() => loaded && handleClickMyHero(hero, i)}
               style={{
                 // border: "1px solid",
@@ -169,13 +159,13 @@ export default ({ allHeroes }) => {
                 //     ? "tomato" // Errado
                 //     : "transparent",
 
-                backgroundColor:
+                background:
                   myHero === hero && hero.id !== randomHero.id
                     ? "white" // Selected hero
                     : hero.id === randomHero.id && hero.visible
-                    ? "lightgreen" //Correto
+                    ? "linear-gradient(to right, #43e97b 0%, #38f9d7 100%)" //Correto
                     : hero.id !== randomHero.id && hero.visible
-                    ? "tomato" // Errado
+                    ? "linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%)" // Errado
                     : "transparent"
               }}
               // className={hero.visible ? "fa-spin" : ""}
