@@ -110,13 +110,13 @@
   place-items: center;
 }
 
-.correct {
-  animation: fadeIn 0.5s ease-out 1s infinite alternate;
+.animate-correct {
+  animation: animateCorrect 0.6s linear 1s infinite;
 }
 
-@keyframes fadeIn {
+@keyframes animateCorrect {
   100% {
-    opacity: 0;
+    background: linear-gradient(to left, #43e97b 0%, #38f9d7 100%);
   }
 }
 

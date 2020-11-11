@@ -64,7 +64,13 @@ export default ({ allHeroes }) => {
               src={url + myHero.img}
               alt={myHero.name}
               onAnimationEnd={handleAnimationEnd}
-              className={!loaded ? "fade-top" : null}
+              className={
+                !loaded && myHero.id !== randomHero.id
+                  ? "animate__animated animate__flipInX"
+                  : !loaded && myHero.id === randomHero.id
+                  ? "animate__animated animate__tada"
+                  : null
+              }
             />
           ) : (
             <img
@@ -104,15 +110,19 @@ export default ({ allHeroes }) => {
             cursor: myHero.id === randomHero.id ? "pointer" : "default"
           }}
         >
-          <span
-            className={myHero.id === randomHero.id ? "correct" : null}
+          <div
+            className={
+              !loaded && myHero.id === randomHero.id
+                ? "animate__animated animate__tada"
+                : null
+            }
             style={{
               fontSize: "1.4rem",
               fontWeight: "700"
             }}
           >
             {!myHero.name ? "Dota Find Hero" : myHero.name}
-          </span>
+          </div>
         </button>
       </div>
 
