@@ -50,14 +50,10 @@ export default ({ allHeroes }) => {
     setGridHeroes(newGridRandomHeroes);
 
     setMyHero(hero);
-    // console.log(hero);
     setLoaded(false);
   };
 
-  const handleAnimationEnd = () => {
-    setLoaded(true);
-    // console.log("Loaded onAnimationEnd");
-  };
+  const handleAnimationEnd = () => setLoaded(true);
 
   return (
     <div className={"mainCard"}>
@@ -74,7 +70,7 @@ export default ({ allHeroes }) => {
             <img
               src={bgBtn}
               alt="Dota Find Hero"
-              style={{ height: "70%", width: "auto", borderRadius: "50%" }}
+              style={{ height: "70%", width: "auto" }}
             />
           )}
         </div>
@@ -82,8 +78,7 @@ export default ({ allHeroes }) => {
       <div
         style={{
           width: "100%",
-          height: "2.8rem",
-          background: "whitesmoke"
+          height: "2.8rem"
         }}
       >
         <button
@@ -94,15 +89,15 @@ export default ({ allHeroes }) => {
             height: "100%",
             border: "0",
             background:
-              myHero.id && myHero.id === randomHero.id
+              myHero && myHero.id === randomHero.id
                 ? "linear-gradient(to right, #43e97b 0%, #38f9d7 100%)"
                 : // : myHero.name && myHero.name !== randomHero.name
                   // ? "tomato"
-                  "rgba(0,0,0, .1)",
+                  "#ddd",
             color:
-              myHero.id && myHero.id === randomHero.id
-                ? "#333" //Certo
-                : myHero.id && myHero.id !== randomHero.id
+              myHero && myHero.id === randomHero.id
+                ? "#111" //Certo
+                : myHero && myHero.id !== randomHero.id
                 ? "#555" //Errado
                 : "#333", //Não Certo, Não Errado
 
@@ -110,6 +105,7 @@ export default ({ allHeroes }) => {
           }}
         >
           <span
+            className={myHero.id === randomHero.id ? "correct" : null}
             style={{
               fontSize: "1.4rem",
               fontWeight: "700"
