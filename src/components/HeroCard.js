@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React from "react";
 import "./styles.css";
 
 export default ({ allHeroes }) => {
@@ -11,7 +11,7 @@ export default ({ allHeroes }) => {
     "https://uploads.codesandbox.io/uploads/user/ae5fd45a-0dd7-412f-8b21-cf9bc0bf6af9/H6CZ-bg-btn.png"
   );
 
-  const filterHeroes = useCallback((arr) => {
+  const filterHeroes = React.useCallback((arr) => {
     let count = 25;
     const arrayAllHeroes = [];
 
