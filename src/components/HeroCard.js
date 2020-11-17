@@ -97,9 +97,7 @@ export default ({ allHeroes }) => {
             background:
               myHero && myHero.id === randomHero.id
                 ? "linear-gradient(to right, #43e97b 0%, #38f9d7 100%)"
-                : // : myHero.name && myHero.name !== randomHero.name
-                  // ? "tomato"
-                  "#ddd",
+                : "#ddd",
             color:
               myHero && myHero.id === randomHero.id
                 ? "#111" //Certo
@@ -136,7 +134,6 @@ export default ({ allHeroes }) => {
           let iconBtn = (
             <>
               <img
-                // src={url + hero.icon}
                 src={hero.visible ? url + hero.icon : bgBtn}
                 alt={hero.visible ? hero.name : "DotaFindHero"}
                 onError={onImageError}
@@ -155,16 +152,6 @@ export default ({ allHeroes }) => {
               key={hero.id}
               onClick={() => loaded && handleClickMyHero(hero, i)}
               style={{
-                // border: "1px solid",
-                // borderColor:
-                //   myHero === hero && hero.id !== randomHero.id
-                //     ? "white" // Selected hero
-                //     : hero.id === randomHero.id && hero.visible
-                //     ? "lightgreen" //Correto
-                //     : hero.id !== randomHero.id && hero.visible
-                //     ? "tomato" // Errado
-                //     : "transparent",
-
                 background:
                   myHero === hero && hero.id !== randomHero.id
                     ? "white" // Selected hero
@@ -174,7 +161,6 @@ export default ({ allHeroes }) => {
                     ? "linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%)" // Errado
                     : "transparent"
               }}
-              // className={hero.visible ? "fa-spin" : ""}
             >
               {iconBtn}
             </button>

@@ -10,7 +10,6 @@ export default function App() {
     (async () => {
       const response = await fetch("https://api.opendota.com/api/heroStats");
       const dataJson = await response.json();
-      // dataJson && console.log(dataJson);
 
       const data = await dataJson.map(({ id, localized_name, img, icon }) => {
         return {
@@ -18,14 +17,11 @@ export default function App() {
           name: localized_name,
           img,
           icon
-          // img: `https://steamcdn-a.akamaihd.net${img}`,
-          // icon: `https://steamcdn-a.akamaihd.net${icon}`,
         };
       });
 
       if (data) {
         setAllHeroes(data);
-        // console.log(data);
       }
     })();
   }, []);
